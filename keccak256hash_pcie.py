@@ -108,10 +108,10 @@ def hash_genesis_block():
     fd_c2h = os.open("/dev/xdma/card0/c2h0", os.O_RDONLY)
 
     start_time = time.time()
-    # Send to FPGA block RAM
+    # Send to FPGA 
     os.pwrite(fd_h2c, tx_data, 0)
 
-    # Receive from FPGA block RAM
+    # Receive from FPGA 
     rx_data = os.pread(fd_c2h, 32, 0)
     end_time = time.time()
     delay = end_time -start_time
